@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="4.13.2" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="41258,6781053472" ReportOptions.Description.Text="" ReportOptions.LastChange="41263,5926017708" ScriptLanguage="C++Script" ScriptText.Text="&#13;&#10;{&#13;&#10;&#13;&#10;}" PropData="044C656674031E0103546F7002060844617461736574730100095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="148" PaperHeight="210" PaperSize="11" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxShapeView Name="Shape3" Left="18,89765" Top="125,28355" Width="442,20501" Height="60,47248" ShowHint="False"/>
+    <TfrxShapeView Name="Shape1" Left="18,89765" Top="202,31509" Width="442,20501" Height="234,33086" ShowHint="False"/>
+    <TfrxCheckBoxView Name="chCorners" Left="26,45671" Top="327,03958" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="mZakaz" Left="18,89765" Top="3,33859" Width="442,20501" Height="34,01577" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="Заказ Фотокнига № ____"/>
+    <TfrxMemoView Name="mAgent" Left="26,45671" Top="64,37013" Width="434,64595" Height="22,67718" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Контрагент: Осинцев Владимир Николаевич"/>
+    <TfrxMemoView Name="mFormat" Left="26,45671" Top="137,62214" Width="434,64595" Height="22,67718" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Формат: 10x15 альбом"/>
+    <TfrxMemoView Name="mSpreadCount" Left="26,45671" Top="160,29932" Width="434,64595" Height="22,67718" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Количество разворотов: 10 разворотов"/>
+    <TfrxMemoView Name="mCoverType" Left="26,45671" Top="221,21274" Width="434,64595" Height="22,67718" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Тип обложки: Мягкая Фото"/>
+    <TfrxMemoView Name="mCoverMaterial" Left="26,45671" Top="243,88992" Width="434,64595" Height="22,67718" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Материал обложки: Глянцевая фотобумага характеристика"/>
+    <TfrxCheckBoxView Name="chLaminat" Left="26,45671" Top="274,12616" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="mLaminatMaterial" Left="49,13389" Top="274,12616" Width="411,96877" Height="18,89765" ShowHint="False" Text="Ламинат: Глянцевый Конфлекс Китай"/>
+    <TfrxCheckBoxView Name="chPorolon" Left="26,45671" Top="300,58287" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="Memo2" Left="49,13389" Top="300,58287" Width="64,25201" Height="18,89765" ShowHint="False" Text="Поролон"/>
+    <TfrxMemoView Name="Memo3" Left="49,13389" Top="327,03958" Width="64,25201" Height="18,89765" ShowHint="False" Text="Уголки"/>
+    <TfrxCheckBoxView Name="chStitch" Left="26,45671" Top="353,49629" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="Memo4" Left="49,13389" Top="353,49629" Width="64,25201" Height="18,89765" ShowHint="False" Text="Строчка"/>
+    <TfrxCheckBoxView Name="chCord" Left="26,45671" Top="379,953" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="Memo5" Left="49,13389" Top="379,953" Width="64,25201" Height="18,89765" ShowHint="False" Text="Тесьма"/>
+    <TfrxCheckBoxView Name="chCutt" Left="26,45671" Top="406,40971" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="Memo6" Left="49,13389" Top="406,40971" Width="158,74026" Height="18,89765" ShowHint="False" Text="Вырубка под фото"/>
+    <TfrxMemoView Name="Memo1" Left="26,45671" Top="192,31509" Width="71,81107" Height="18,89765" ShowHint="False" Color="16777215" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Обложка"/>
+    <TfrxShapeView Name="Shape2" Left="18,89765" Top="453,42548" Width="442,20501" Height="105,82684" ShowHint="False"/>
+    <TfrxMemoView Name="Memo7" Left="26,45671" Top="443,42548" Width="41,57483" Height="18,89765" ShowHint="False" Color="16777215" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Блок"/>
+    <TfrxMemoView Name="mSpreadMaterial" Left="26,45671" Top="466,88219" Width="434,64595" Height="22,67718" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Материал разворота: Глянцевая фотобумага характеристика"/>
+    <TfrxCheckBoxView Name="chForzac" Left="26,45671" Top="497,11843" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="mForzacMaterial" Left="49,13389" Top="497,11843" Width="411,96877" Height="18,89765" ShowHint="False" Text="Форзац: Картон Бархат характеристика"/>
+    <TfrxCheckBoxView Name="chRound" Left="26,45671" Top="523,57514" Width="18,89765" Height="18,89765" ShowHint="False" CheckColor="0" CheckStyle="csCheck" Frame.Typ="15"/>
+    <TfrxMemoView Name="Memo8" Left="49,13389" Top="523,57514" Width="120,94496" Height="18,89765" ShowHint="False" Text="Скругление углов"/>
+    <TfrxMemoView Name="mPhone" Left="26,45671" Top="85,04731" Width="434,64595" Height="22,67718" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Телефон: 89139995544"/>
+    <TfrxMemoView Name="mManager" Left="26,45671" Top="573,50433" Width="430,86642" Height="18,89765" ShowHint="False" Text="Менеджер: Перегоедов Алексей тел.: 89139995522"/>
+    <TfrxMemoView Name="Memo10" Left="26,45671" Top="115,28355" Width="132,28355" Height="18,89765" ShowHint="False" Color="16777215" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Общие параметры"/>
+    <TfrxLineView Name="Line4" Left="18,89765" Top="661,41775" Width="445,98454" Height="0" ShowHint="False" Frame.Typ="4"/>
+    <TfrxLineView Name="Line5" Left="18,89765" Top="684,09493" Width="445,98454" Height="0" ShowHint="False" Frame.Typ="4"/>
+    <TfrxLineView Name="Line6" Left="18,89765" Top="706,77211" Width="445,98454" Height="0" ShowHint="False" Frame.Typ="4"/>
+    <TfrxMemoView Name="mDesigner" Left="26,45671" Top="597,16574" Width="430,86642" Height="18,89765" ShowHint="False" Text="Дизайнер: Голубкова Анна тел.: 89139995522"/>
+    <TfrxMemoView Name="mFinance" Left="26,45671" Top="40,57483" Width="430,86642" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="Цена: 3500 руб. Количество: 1 шт. Сумма: 3500 руб."/>
+    <TfrxLineView Name="Line1" Left="18,89765" Top="638,74057" Width="445,98454" Height="0" ShowHint="False" Frame.Typ="4"/>
+  </TfrxReportPage>
+</TfrxReport>
