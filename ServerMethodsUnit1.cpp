@@ -357,13 +357,13 @@ System::UnicodeString TServerMethods1::FindUsers() {
 	while (!t->Eof) {
 		login = t->FieldByName("login")->AsString;
 		role = t->FieldByName("role")->AsString;
-		oklad = t->FieldByName("oklad")->AsString;
-		managerPercent = t->FieldByName("managerPercent")->AsString;
+//		oklad = t->FieldByName("oklad")->AsString;
+//		managerPercent = t->FieldByName("managerPercent")->AsString;
 
 		sl->Add(login);
 		sl->Add(role);
-		sl->Add(oklad);
-		sl->Add(managerPercent);
+//		sl->Add(oklad);
+//		sl->Add(managerPercent);
 
 		t->Next();
 	};
