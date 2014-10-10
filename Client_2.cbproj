@@ -4,7 +4,7 @@
 			<ProjectVersion>12.3</ProjectVersion>
 			<MainSource>Client_2.cpp</MainSource>
 			<Base>True</Base>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
 			<FrameworkType>VCL</FrameworkType>
@@ -495,51 +495,51 @@
 				<DependentOn>ZPUnit.h</DependentOn>
 				<BuildOrder>14</BuildOrder>
 			</CppCompile>
-			<FormResources Include="UnitFrameMaterialSquare.dfm"/>
-			<FormResources Include="UnitFrameMaterialSquareBase.dfm"/>
-			<FormResources Include="UnitFrameMaterialLength.dfm"/>
-			<FormResources Include="UnitFrameMaterialSelectable.dfm"/>
 			<FormResources Include="UnitFrameNarezkaZadnika.dfm"/>
-			<FormResources Include="UnitFrameOperationPlotter.dfm"/>
-			<FormResources Include="UnitFrameOperationLuvers.dfm"/>
 			<FormResources Include="UnitFrameOperation.dfm"/>
+			<FormResources Include="UnitFrameMaterialSquareBase.dfm"/>
+			<FormResources Include="UnitFrameMaterialSelectable.dfm"/>
+			<FormResources Include="UnitFrameMaterialSquare.dfm"/>
+			<FormResources Include="UnitFrameOperationPlotter.dfm"/>
+			<FormResources Include="UnitFrameOperationPodramnik.dfm"/>
+			<FormResources Include="UnitFrameOperationLuvers.dfm"/>
+			<FormResources Include="UnitFrameOperationBaget.dfm"/>
 			<FormResources Include="UnitFrameOperationLamination.dfm"/>
-			<FormResources Include="UnitFrameMaterial.dfm"/>
-			<FormResources Include="UnitFormAddTechnos.dfm"/>
+			<FormResources Include="UnitFormSborny.dfm"/>
+			<FormResources Include="UnitFrameDetailCount.dfm"/>
 			<FormResources Include="UnitFormPlace.dfm"/>
 			<FormResources Include="UnitFirstLamination.dfm"/>
-			<FormResources Include="UnitFormSborny.dfm"/>
-			<FormResources Include="UnitFrameFirstOperationPrint.dfm"/>
+			<FormResources Include="UnitFormAddTechnos.dfm"/>
+			<FormResources Include="UnitFrameMaterial.dfm"/>
+			<FormResources Include="UnitFrameMaterialLength.dfm"/>
 			<FormResources Include="UnitFrameIzdelie.dfm"/>
-			<FormResources Include="UnitFrameDetailCount.dfm"/>
 			<FormResources Include="UnitFrameFirstOperationPlotter.dfm"/>
-			<FormResources Include="UnitFrameOperationRezka.dfm"/>
+			<FormResources Include="UnitFrameFirstOperationPrint.dfm"/>
 			<FormResources Include="UnitSelectableFrame.dfm"/>
 			<FormResources Include="UnitOperationDesign.dfm"/>
-			<FormResources Include="ZPUnit.dfm"/>
-			<FormResources Include="UserListFormUnit.dfm"/>
-			<FormResources Include="UserListUnit.dfm"/>
 			<FormResources Include="UnitFrameWithMat.dfm"/>
+			<FormResources Include="ZPUnit.dfm"/>
+			<FormResources Include="UserListUnit.dfm"/>
+			<FormResources Include="UserListFormUnit.dfm"/>
 			<FormResources Include="UnitFrameOperationViborka.dfm"/>
 			<FormResources Include="UnitFrameOperationWithLengthMat.dfm"/>
-			<FormResources Include="UnitFrameOperationSquareMaterial.dfm"/>
 			<FormResources Include="UnitFrameOperationTermoTransfer.dfm"/>
-			<FormResources Include="UnitFrameOperationWithMaterial.dfm"/>
+			<FormResources Include="UnitFrameOperationRezka.dfm"/>
+			<FormResources Include="UnitFrameOperationSquareMaterial.dfm"/>
 			<FormResources Include="UnitFramePlaceOperation.dfm"/>
 			<FormResources Include="UnitFrameSimpleCount.dfm"/>
-			<FormResources Include="UnitFrameOperationWithTool.dfm"/>
 			<FormResources Include="UnitFramePlaceCount.dfm"/>
+			<FormResources Include="UnitFrameOperationWithMaterial.dfm"/>
+			<FormResources Include="UnitFrameOperationWithTool.dfm"/>
 			<FormResources Include="FormClientUnit.dfm"/>
 			<FormResources Include="FormFotoBookUnit.dfm"/>
 			<FormResources Include="MainFormUnit.dfm"/>
-			<FormResources Include="FindOrdersUnit.dfm"/>
 			<FormResources Include="ClientModuleUnit1.dfm"/>
+			<FormResources Include="FindOrdersUnit.dfm"/>
 			<FormResources Include="DesignOrderUnit.dfm"/>
 			<FormResources Include="ufrSpisok.dfm"/>
-			<FormResources Include="PassUnit.dfm"/>
 			<FormResources Include="PrinterCalcUnit.dfm"/>
-			<FormResources Include="UnitFrameOperationBaget.dfm"/>
-			<FormResources Include="UnitFrameOperationPodramnik.dfm"/>
+			<FormResources Include="PassUnit.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

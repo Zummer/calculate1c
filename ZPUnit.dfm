@@ -227,10 +227,6 @@ object fZP: TfZP
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'TabSheet1'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object StringGrid1: TStringGrid
         Left = 0
         Top = 0

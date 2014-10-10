@@ -21,7 +21,6 @@ object fUsers: TfUsers
     Height = 57
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 578
     object DBNavigator1: TDBNavigator
       Left = 16
       Top = 16
@@ -50,40 +49,19 @@ object fUsers: TfUsers
       item
         Expanded = False
         FieldName = 'idlogin_table'
-        Title.Caption = 'id'
+        ReadOnly = True
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'login'
-        Title.Caption = #1051#1086#1075#1080#1085' '#1074' 1'#1089
-        Width = 130
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'pswd'
-        Title.Caption = #1055#1072#1088#1086#1083#1100
-        Width = 60
+        Width = 150
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'role'
-        Title.Caption = #1056#1086#1083#1100
-        Width = 80
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'oklad'
-        Title.Caption = #1054#1082#1083#1072#1076' '#1074' '#1076#1077#1085#1100
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'managerPercent'
-        Title.Caption = #1055#1088#1086#1094#1077#1085#1090' '#1084#1077#1085#1077#1076#1078#1077#1088#1072
+        Width = 100
         Visible = True
       end>
   end

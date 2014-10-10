@@ -138,9 +138,9 @@ void TfConnect::GetUsers() {
 	for (int i = 0; i < sl->Count; i++) {
 		// не забыть удалить юзеров
 		TBasicUser *user = new TBasicUser(sl->Strings[i++]);
-		user->role = sl->Strings[i++];
-		user->DayOklad = StrToInt(sl->Strings[i++]);
-		user->managerPercent = StrToInt(sl->Strings[i]);
+		user->role = sl->Strings[i];
+//		user->DayOklad = StrToInt(sl->Strings[i++]);
+//		user->managerPercent = StrToInt(sl->Strings[i]);
 		cbUser->Items->AddObject(user->login, user);
 	}
 	cbUser->ItemIndex = 0;
@@ -160,9 +160,9 @@ void __fastcall TfConnect::sbtGetUsersClick(TObject *Sender) {
 	for (int i = 0; i < sl->Count; i++) {
 		// не забыть удалить юзеров
 		TBasicUser *user = new TBasicUser(sl->Strings[i++]);
-		user->role = sl->Strings[i++];
-		user->DayOklad = StrToInt(sl->Strings[i++]);
-		user->managerPercent = StrToInt(sl->Strings[i]);
+		user->role = sl->Strings[i];
+//		user->DayOklad = StrToInt(sl->Strings[i++]);
+//		user->managerPercent = StrToInt(sl->Strings[i]);
 		cbUser->Items->AddObject(user->login, user);
 	}
 	//cbUser->ItemIndex = 0;

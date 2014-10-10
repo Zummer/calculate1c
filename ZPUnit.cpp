@@ -31,7 +31,7 @@ __fastcall TfZP::TfZP(TComponent* Owner) : TForm(Owner) {
 
 	cbUsers->Items->Assign(fConnect->cbUser->Items);
 	// cbUsers->ItemIndex = fConnect->ComboBox1->ItemIndex;
-	cbUsers->ItemIndex = cbUsers->Items->IndexOf("Демьяненко Игорь");
+	cbUsers->ItemIndex = cbUsers->Items->IndexOf("Афанасьев Дмитрий");
 	user = (TBasicUser*)cbUsers->Items->Objects[cbUsers->ItemIndex];
 
 	TabSheet1->Caption = "Долг в очете по менеджеру";
