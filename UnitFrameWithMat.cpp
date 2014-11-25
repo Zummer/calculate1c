@@ -65,7 +65,7 @@ void TfrOperationWithMat::SetParams() {
 
 		if (delta > 0) { // если надо добавить
 			for (int i = 0; i < delta; i++) {
-//				 AddMaterialFrame();
+				// AddMaterialFrame();
 				TfrMaterial *mat = materialFrame->Clone();
 			}
 		}
@@ -95,8 +95,14 @@ void TfrOperationWithMat::SetParams() {
 	// matNom->SetCount(materialFrame->count); // -- это полная хуйня!!!
 
 	// индивидуальный модификатор (например эксклюзивность)
-	primeNom->nomenklatura->price =
-		primeNom->nomenklatura->startPrice * matNom->nomenklatura->ratioPrice;
+	if (fSbornyZakaz->cbxModifikator->Checked) {
+		primeNom->nomenklatura->price = primeNom->nomenklatura->startPrice;
+	}
+	else {
+		primeNom->nomenklatura->price =
+			primeNom->nomenklatura->startPrice *
+			matNom->nomenklatura->ratioPrice;
+	}
 }
 
 // ---------------------------------------------------------------------------

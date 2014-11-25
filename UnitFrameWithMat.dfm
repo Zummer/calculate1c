@@ -1,7 +1,9 @@
 inherited frOperationWithMat: TfrOperationWithMat
+  Width = 770
   Height = 177
   ExplicitHeight = 177
   inherited BasePanel: TPanel
+    Width = 770
     Height = 100
     Align = alTop
     ExplicitHeight = 100
@@ -16,15 +18,16 @@ inherited frOperationWithMat: TfrOperationWithMat
     end
   end
   inherited pnlSelect: TPanel
-    ExplicitWidth = 781
+    Width = 770
   end
   object sbForMatFrame: TScrollBox
     Left = 0
     Top = 130
-    Width = 451
+    Width = 770
     Height = 47
     Align = alClient
     BorderStyle = bsNone
     TabOrder = 2
+    ExplicitWidth = 451
   end
 end

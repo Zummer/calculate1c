@@ -39,8 +39,8 @@ __fastcall TfrOperationWithMaterial::~TfrOperationWithMaterial() {
 void TfrOperationWithMaterial::AddMaterialFrame() {
 	TFrame *matFrame;
 	if (dynamic_cast<TfrMaterialSquareBase*>(materialFrame)) {
-		matFrame = new TfrMaterialSquareBase(materialFrame->listOfMaterialsOutside,
-			this, izdelie);
+		matFrame = new TfrMaterialSquareBase
+			(materialFrame->listOfMaterialsOutside, this, izdelie);
 	}
 	else { // если это TfrMaterialSquare
 		matFrame = new TfrMaterial(materialFrame->listOfMaterialsOutside, this,
@@ -90,8 +90,14 @@ void TfrOperationWithMaterial::SetParams() {
 	matNom->nomenklatura = materialFrame->matCur->nomenklatura;
 	// matNom->SetCount(materialFrame->count); // -- это полная хуйня!!!
 
-	primeNom->nomenklatura->price =
-		primeNom->nomenklatura->startPrice * matNom->nomenklatura->ratioPrice;
+	if (fSbornyZakaz->cbxModifikator->Checked) {
+		primeNom->nomenklatura->price = primeNom->nomenklatura->startPrice;
+	}
+	else {
+		primeNom->nomenklatura->price =
+			primeNom->nomenklatura->startPrice *
+			matNom->nomenklatura->ratioPrice;
+	}
 }
 
 // ---------------------------------------------------------------------------
@@ -114,6 +120,11 @@ void __fastcall TfrOperationWithMaterial::chkEveryDetailHasOwnMaterialClick
 	(TObject *Sender)
 
 {
+	fSbornyZakaz->Sum();
+}
+
+// ---------------------------------------------------------------------------
+void __fastcall TfrOperationWithMaterial::cbxModifikatorClick(TObject *Sender) {
 	fSbornyZakaz->Sum();
 }
 // ---------------------------------------------------------------------------

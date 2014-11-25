@@ -285,6 +285,27 @@ void __fastcall TFormAddTechnos::btCreateClick(TObject *Sender) {
 			if (chboxOperations->Items->Strings[i] == "Плоттерная резка") {
 				new TfrOperationPlotter(izdelie);
 			}
+
+			// задник Первый
+			if (chboxOperations->Items->Strings[i] == "Задник (первый)") {
+
+			AddSinglePlaceOperations<TfrPlaceLamination>(sbSingleOperations,
+					fSbornyZakaz->listOfSkotches);
+				TfrPlaceLamination *lam =
+					(TfrPlaceLamination*)izdelie->listOfOperations->Last();
+				lam->name += " скотча";
+				lam->cbTool->ItemIndex = 0; // холодное
+				lam->cbToolChange(NULL);
+
+				TfrOperationLamination *peno =
+					new TfrOperationLamination(izdelie,
+					fSbornyZakaz->listOfBacks, eFilterBacks->Text);
+				peno->name += " на задник";
+				peno->cbTool->ItemIndex = 0; // холодное
+				peno->cbToolChange(NULL);
+			}
+
+			// задник последующий
 			if (chboxOperations->Items->Strings[i] == "Задник") {
 				TfrOperationLamination *skotch =
 					new TfrOperationLamination(izdelie,

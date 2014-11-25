@@ -275,6 +275,13 @@ void __fastcall TfSbornyZakaz::btnDeleteIzdelieClick(TObject *Sender) {
 // ---------------------------------------------------------------------------
 void __fastcall TfSbornyZakaz::FormShow(TObject *Sender) {
 	FormPlace->Show(); // показываем форму с размещением деталей изделий
+
+	if (fConnect->curUser->role != "Админ") {
+		cbxModifikator->Visible = false;
+	}
+	else {
+		cbxModifikator->Visible = true;
+	}
 }
 // ---------------------------------------------------------------------------
 
@@ -900,5 +907,10 @@ void __fastcall TfSbornyZakaz::spCountKeyPress(TObject *Sender, wchar_t &Key) {
 // ---------------------------------------------------------------------------
 void __fastcall TfSbornyZakaz::eFamiliaChange(TObject *Sender) {
 	UpdateZakazCaption();
+}
+
+// ---------------------------------------------------------------------------
+void __fastcall TfSbornyZakaz::cbxModifikatorClick(TObject *Sender) {
+	Sum();
 }
 // ---------------------------------------------------------------------------

@@ -1,7 +1,9 @@
 inherited frOperation: TfrOperation
+  Width = 804
   Height = 125
   ExplicitHeight = 125
   inherited BasePanel: TPanel
+    Width = 804
     Height = 95
     ExplicitHeight = 95
     object ListBoxOfOperations: TListBox
@@ -25,6 +27,7 @@ inherited frOperation: TfrOperation
     end
   end
   inherited pnlSelect: TPanel
+    Width = 804
     Color = clSilver
     object lbCount: TLabel [1]
       Left = 365
