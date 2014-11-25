@@ -101,6 +101,7 @@ __published: // IDE-managed Components
 	TAdvSpinEdit *spCount;
 	TLabel *Label1;
 	TLabel *Label2;
+	TCheckBox *cbxModifikator;
 
 	void __fastcall btnAddIzdelieClick(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
@@ -125,6 +126,7 @@ __published: // IDE-managed Components
 	void __fastcall spCountChange(TObject *Sender);
 	void __fastcall spCountKeyPress(TObject *Sender, wchar_t &Key);
 	void __fastcall eFamiliaChange(TObject *Sender);
+	void __fastcall cbxModifikatorClick(TObject *Sender);
 
 private: // User declarations
 		public : // User declarations

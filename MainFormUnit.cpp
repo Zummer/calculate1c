@@ -19,6 +19,7 @@ TfMainClient *fMainClient;
 // ---------------------------------------------------------------------------
 __fastcall TfMainClient::TfMainClient(TComponent* Owner) : TForm(Owner) {
 
+	Caption = "Главная форма. Версия " + fConnect->version;
 }
 
 // ---------------------------------------------------------------------------

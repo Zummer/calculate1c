@@ -272,6 +272,15 @@ object fSbornyZakaz: TfSbornyZakaz
       OnChange = spCountChange
       OnKeyPress = spCountKeyPress
     end
+    object cbxModifikator: TCheckBox
+      Left = 233
+      Top = 6
+      Width = 193
+      Height = 17
+      Caption = #1053#1077' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1084#1086#1076#1080#1092#1080#1082#1072#1090#1086#1088#1099
+      TabOrder = 6
+      OnClick = cbxModifikatorClick
+    end
   end
   object sbForSelFrame: TScrollBox
     Left = 0
@@ -302,7 +311,7 @@ object fSbornyZakaz: TfSbornyZakaz
     PrintOptions.PrintMode = pmJoin
     PrintOptions.PrintOnSheet = 9
     ReportOptions.CreateDate = 41294.654720208300000000
-    ReportOptions.LastChange = 41908.183114467600000000
+    ReportOptions.LastChange = 41933.429265347220000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'

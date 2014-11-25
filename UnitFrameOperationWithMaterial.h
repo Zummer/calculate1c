@@ -21,6 +21,7 @@ __published: // IDE-managed Components
 	TCheckBox *chkEveryDetailHasOwnMaterial;
 	TScrollBox *sbForMatFrame;
 	void __fastcall chkEveryDetailHasOwnMaterialClick(TObject *Sender);
+	void __fastcall cbxModifikatorClick(TObject *Sender);
 		private : // User declarations
 	public : // User declarations
 		__fastcall TfrOperationWithMaterial(UnicodeString name,
