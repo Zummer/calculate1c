@@ -1,7 +1,7 @@
 inherited frFirstOperationPrint: TfrFirstOperationPrint
-  Width = 829
+  ExplicitWidth = 829
   inherited BasePanel: TPanel
-    Width = 829
+    ExplicitWidth = 829
     object PrintDensity: TAdvTrackBar [12]
       Left = 543
       Top = 66
@@ -94,7 +94,6 @@ inherited frFirstOperationPrint: TfrFirstOperationPrint
     end
   end
   inherited pnlSelect: TPanel
-    Width = 829
     inherited lbCount: TLabel
       Left = 581
       Top = 9
@@ -120,6 +119,6 @@ inherited frFirstOperationPrint: TfrFirstOperationPrint
     end
   end
   inherited sbForMatFrame: TScrollBox
-    Width = 829
+    ExplicitWidth = 829
   end
 end

@@ -162,6 +162,9 @@ void TfrPlaceOperation::SetParams() {
 		}
 
 		ShowInMemo(s);
+		// покажем это в описании
+		fSbornyZakaz->sldescription->Add(izdelie->LabelSelect->Caption +
+			": " + s);
 	}
 
 	TfrOperationWithMaterial::SetParams();

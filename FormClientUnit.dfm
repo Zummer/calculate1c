@@ -3,7 +3,7 @@ object fConnect: TfConnect
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = #1055#1086#1076#1082#1083#1102#1095#1077#1085#1080#1077' '#1082' 1'#1089
-  ClientHeight = 117
+  ClientHeight = 114
   ClientWidth = 350
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

@@ -74,21 +74,26 @@ void TfrOperationWithMaterial::SetParams() {
 				listOfMaterialFrames->Delete(i);
 			}
 		}
+
+		for (int i = 0; i < listOfMaterialFrames->Count; i++) {
+			TfrMaterial *matFrame =
+				dynamic_cast<TfrMaterial*>(listOfMaterialFrames->Items[i]);
+			matFrame->SetParams();
+		}
+
 	}
 	else {
 		listOfMaterialFrames->Clear();
 		materialFrame->Parent = sbForMatFrame;
+		// настройка материала
+		materialFrame->SetParams();
+		// желательно после настройки фрейма материала
+		matNom->nomenklatura = materialFrame->matCur->nomenklatura;
 	}
 
 	if (!minimize) {
 		Maximize();
 	}
-
-	// настройка материала
-	materialFrame->SetParams();
-	// желательно после настройки фрейма материала
-	matNom->nomenklatura = materialFrame->matCur->nomenklatura;
-	// matNom->SetCount(materialFrame->count); // -- это полная хуйня!!!
 
 	if (fSbornyZakaz->cbxModifikator->Checked) {
 		primeNom->nomenklatura->price = primeNom->nomenklatura->startPrice;
@@ -98,6 +103,10 @@ void TfrOperationWithMaterial::SetParams() {
 			primeNom->nomenklatura->startPrice *
 			matNom->nomenklatura->ratioPrice;
 	}
+
+	// покажем это в описании
+	fSbornyZakaz->sldescription->Add(izdelie->LabelSelect->Caption + ": " +
+		matNom->nomenklatura->name);
 }
 
 // ---------------------------------------------------------------------------

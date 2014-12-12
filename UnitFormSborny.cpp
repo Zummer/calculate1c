@@ -85,6 +85,11 @@ __fastcall TfSbornyZakaz::TfSbornyZakaz(TComponent* Owner) : TForm(Owner) {
 	slgoods = new TStringList();
 	slgoods->StrictDelimiter = true;
 	slgoods->Delimiter = '|';
+
+	// настроим список в описании заказа для 1с
+	sldescription = new TStringList();
+	sldescription->StrictDelimiter = true;
+	sldescription->Delimiter = ';';
 }
 
 // ---------------------------------------------------------------------------
@@ -104,11 +109,11 @@ UnicodeString TfSbornyZakaz::MaterialFilter(TObjectList *list) {
 	}
 
 	if (list == listOfBagets) { // "багет") {
-		filter = "00000002705"; // общая папка
-		filter += "|00000002744"; // хаммер
-		filter += "|00000002873"; // фотолэнд
-		filter += "|00000002746"; // лион
-		filter += "|00000002745"; // неоарт
+		filter = "00000004282"; // профиль
+		// filter += "|00000002744"; // хаммер
+		// filter += "|00000002873"; // фотолэнд
+		// filter += "|00000002746"; // лион
+		// filter += "|00000002745"; // неоарт
 	}
 
 	if (list == listOfTermoPlots) { // "рулоны термопленки") {
@@ -155,8 +160,10 @@ UnicodeString TfSbornyZakaz::MaterialFilter(TObjectList *list) {
 	if (list == listOfSkotches) { // "скотчи") {
 		filter = "00000003022"; // для накатки пенокартона
 	}
-	if (list == listOfBacks) { // "пенокартоны") {
-		filter = "00000003478";
+	if (list == listOfBacks) { // "Задники") {
+		filter = "00000003478"; // пенокартон
+		filter += "|00000004279"; // картон
+		filter += "|00000004280"; // пластик
 	}
 	if (list == listOfMontages) { // "монтажки") {
 		filter = "00000003174";
@@ -193,6 +200,7 @@ void __fastcall TfSbornyZakaz::FormDestroy(TObject *Sender) {
 	delete listOfTools;
 
 	delete slgoods;
+	delete sldescription;
 }
 
 // ---------------------------------------------------------------------------
@@ -368,6 +376,7 @@ double TfSbornyZakaz::Sum() {
 	// чистим
 	slgoods->Clear();
 	Memo1->Clear();
+	sldescription->Clear();
 
 	if (sbForSelFrame->ControlCount == 0) {
 		sum = 0;
@@ -679,8 +688,35 @@ bool TfSbornyZakaz::VerifyAgents() {
 	}
 	return true;
 }
-// ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+UnicodeString TfSbornyZakaz::CreateZakazName() {
+
+	UnicodeString stroka = "";
+
+	// из каждого изделия
+	for (int i = 0; i < listOfIzdelies->Count; i++) {
+		TfrIzdelie *izd = (TfrIzdelie*)listOfIzdelies->Items[i];
+		// для каждой операции
+		for (int j = 0; j < izd->sbForSelFrame->ControlCount; j++) {
+			TfrSelectable *frame = (TfrSelectable*)izd->sbForSelFrame->Controls[j];
+
+			// если слово не совпадает
+			if (!Pos(frame->name, stroka)) {
+				if (stroka == "") {
+					stroka += frame->name;
+				}
+				else {
+					stroka += " + " + frame->name;
+				}
+			}
+		}
+	}
+
+	return stroka;
+}
+
+// ---------------------------------------------------------------------------
 void TfSbornyZakaz::PrintZakaz() {
 
 	if (!VerifyOperations()) {
@@ -694,7 +730,8 @@ void TfSbornyZakaz::PrintZakaz() {
 	// Пишем в шапку отчета
 	TfrxMemoView *memo;
 	memo = (TfrxMemoView*)frxReport1->FindObject("mZakaz");
-	memo->Text = "Заказ " + ZakazType + " №: " + ZakazNumber + " от " + Date();
+	memo->Text = "Заказ " + CreateZakazName() + " №: " + ZakazNumber +
+		" от " + Date();
 	memo = (TfrxMemoView*)frxReport1->FindObject("mAgent");
 	if (cbAgents->Text == "Розница")
 		memo->Text = "Клиент: " + eFamilia->Text;
@@ -757,7 +794,9 @@ void TfSbornyZakaz::SaveTo1C() {
 		return;
 	}
 
-	UnicodeString order, goods, vnutr;
+	UnicodeString order, goods, vnutr, description;
+
+	description = sldescription->DelimitedText;
 
 	int zakazCount = spCount->Value;
 
@@ -799,9 +838,10 @@ void TfSbornyZakaz::SaveTo1C() {
 	}
 
 	order = agent->code + "|" + vnutr + "|" + agent->typeprice->code + "|" +
-		ePhone->Text + "|Широкоформат";
+		ePhone->Text + "|Сборный" + "|" + description;
 	// здесь надо заменить на "|Сборный"
 	goods = slgoods->DelimitedText;
+
 	// подготовили данные о товарах
 	ZakazNumber = ClientModule1->ServerMethods1Client->SaveNewOrder3
 		(order, goods);
@@ -820,7 +860,7 @@ void __fastcall TfSbornyZakaz::UpdateZakazCaption() {
 		Caption = Caption + "№: " + ZakazNumber;
 	}
 	if (ZakazType != "") {
-		Caption = Caption + ", " + ZakazType;
+		Caption = Caption + ", " + CreateZakazName();
 	}
 	if (eFamilia->Text != "") {
 		Caption = Caption + ", " + eFamilia->Text;

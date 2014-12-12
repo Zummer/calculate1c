@@ -9,7 +9,6 @@ object ServerContainer1: TServerContainer1
     Top = 11
   end
   object DSTCPServerTransport1: TDSTCPServerTransport
-    Port = 212
     PoolSize = 0
     Server = DSServer1
     BufferKBSize = 32

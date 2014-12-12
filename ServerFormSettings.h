@@ -1,38 +1,29 @@
 //---------------------------------------------------------------------------
 
-#ifndef FormServerUnitH
-#define FormServerUnitH
+#ifndef ServerFormSettingsH
+#define ServerFormSettingsH
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
-#include "ServerUserUnit.h"
-#include "ServerUsersFormUnit.h"
-#include "DBAccess.hpp"
-#include "MyAccess.hpp"
-#include <DB.hpp>
+#include <ExtCtrls.hpp>
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
-class TfMainServer : public TForm
+class TFormSettings : public TForm
 {
 __published:	// IDE-managed Components
-	TButton *Button1;
-	TMyConnection *MyConnection1;
-	TButton *btSettings;
-	void __fastcall Button1Click(TObject *Sender);
-	void __fastcall FormShow(TObject *Sender);
-	void __fastcall btSettingsClick(TObject *Sender);
+	TPanel *Panel1;
+	TPageControl *PageControl1;
+	TTabSheet *TabSheet1;
+	TScrollBox *ScrollBox1;
+	TPanel *Panel2;
+	TTabSheet *TabSheet2;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TfMainServer(TComponent* Owner);
-
-	// вот здесь будет список пользователей
-	TList *listOfUsers;
-
+	__fastcall TFormSettings(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TfMainServer *fMainServer;
+extern PACKAGE TFormSettings *FormSettings;
 //---------------------------------------------------------------------------
-
 #endif
-

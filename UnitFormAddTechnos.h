@@ -76,7 +76,7 @@ __published: // IDE-managed Components
 	TRadioGroup *rgLaminationKind;
 	TLabel *Label6;
 	TLabel *Label7;
-	TListBox *lbTechos;
+	TListBox *lbTechnos;
 	TLabel *Label8;
 	TButton *btCreate;
 	TButton *Button9;
@@ -119,7 +119,7 @@ __published: // IDE-managed Components
 	void __fastcall cbFormatFilterChange(TObject *Sender);
 	void __fastcall cbTehnosSuvenirChange(TObject *Sender);
 	void __fastcall btTshirtCreateClick(TObject *Sender);
-	void __fastcall lbTechosClick(TObject *Sender);
+	void __fastcall lbTechnosClick(TObject *Sender);
 	void __fastcall Button9Click(TObject *Sender);
 	void __fastcall cbMaterialFilterChange(TObject *Sender);
 	void __fastcall Button12Click(TObject *Sender);
@@ -159,6 +159,8 @@ private: // User declarations
 	void __fastcall SetupMaterialColorFilter();
 	void __fastcall SetupMaterialKindFilter();
 	void __fastcall SetupMaterialSizeFilter();
+
+	void __fastcall CreateFirstOperation(int i);
 
 	TObjectList *listOfSls; // список списков
 

@@ -223,6 +223,57 @@ void __fastcall TFormAddTechnos::FormHide(TObject *Sender) {
 }
 
 // ---------------------------------------------------------------------------
+void __fastcall TFormAddTechnos::CreateFirstOperation(int i) {
+	switch (i) {
+	case 0:
+	case 2:
+	case 3:
+	case 4: {
+			AddSinglePlaceOperations<TfrFirstOperationPrint>(sbSingleOperations,
+				fSbornyZakaz->listOfPrintMaterials);
+			break;
+		}
+
+	case 1: {
+			AddSinglePlaceOperations<TfrFirstOperationPlotter>
+				(sbSingleOperations, fSbornyZakaz->listOfPlotMaterials);
+			break;
+		}
+	case 5:
+	case 6: {
+			AddSinglePlaceOperations<TfrPlaceLamination>(sbSingleOperations,
+				fSbornyZakaz->listOfLaminats);
+			TfrPlaceLamination *lam =
+				(TfrPlaceLamination*)izdelie->listOfOperations->Last();
+			lam->name = "Накатка ламината";
+			lam->cbTool->ItemIndex = rgLaminationKind->ItemIndex;
+			lam->cbToolChange(NULL);
+			break;
+		}
+	case 7: {
+			// накатка на задник
+			AddSinglePlaceOperations<TfrPlaceLamination>(sbSingleOperations,
+				fSbornyZakaz->listOfBacks);
+			TfrPlaceLamination *zadnik =
+				(TfrPlaceLamination*)izdelie->listOfOperations->Last();
+			zadnik->name = "Накатка на задник";
+			zadnik->cbTool->ItemIndex = 0; // холодное
+			zadnik->cbToolChange(NULL);
+			// резка
+			new TfrOperationRezka(izdelie);
+			// накатка скотча
+			TfrOperationLamination *lam =
+				new TfrOperationLamination(izdelie,
+				fSbornyZakaz->listOfSkotches, "скотч двухсторонний 140");
+			lam->name = "Накатка скотча";
+			lam->cbTool->ItemIndex = 0; // холодное
+			lam->cbToolChange(NULL);
+			break;
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
 void __fastcall TFormAddTechnos::btCreateClick(TObject *Sender) {
 	LockWindowUpdate(fSbornyZakaz->Handle);
 
@@ -231,49 +282,25 @@ void __fastcall TFormAddTechnos::btCreateClick(TObject *Sender) {
 		izdelie = new TfrIzdelie(fSbornyZakaz);
 	}
 
+	CreateFirstOperation(lbTechnos->ItemIndex);
+
 	for (int i = 0; i < chboxOperations->Count; i++) {
 
 		if (chboxOperations->Checked[i]) {
-			if (chboxOperations->Items->Strings[i] == "Печать (широкий формат)")
-			{
-				AddSinglePlaceOperations<TfrFirstOperationPrint>
-					(sbSingleOperations, fSbornyZakaz->listOfPrintMaterials);
-			}
-			if (chboxOperations->Items->Strings[i] == "Печать (сублимация)") {
-				AddSinglePlaceOperations<TfrFirstOperationPrint>
-					(sbSingleOperations,
-					fSbornyZakaz->listOfSublimPrintMaterials);
-			}
+
 			if (chboxOperations->Items->Strings[i] == "Резка") {
 				new TfrOperationRezka(izdelie);
-			}
-			if (chboxOperations->Items->Strings[i]
-				== "Плоттерная резка (первая)") {
-				AddSinglePlaceOperations<TfrFirstOperationPlotter>
-					(sbSingleOperations, fSbornyZakaz->listOfPlotMaterials);
 			}
 
 			if (chboxOperations->Items->Strings[i] == "Выборка") {
 				new TfrOperationViborka(izdelie);
 			}
 
-			if (chboxOperations->Items->Strings[i] == "Ламинация (первая)") {
-
-				AddSinglePlaceOperations<TfrPlaceLamination>(sbSingleOperations,
-					fSbornyZakaz->listOfLaminats);
-				TfrPlaceLamination *lam =
-					(TfrPlaceLamination*)izdelie->listOfOperations->Last();
-				lam->name += " ламината";
-				lam->cbTool->ItemIndex = rgLaminationKind->ItemIndex;
-				lam->cbToolChange(NULL);
-
-			}
-
 			if (chboxOperations->Items->Strings[i] == "Ламинация") {
 				TfrOperationLamination *lam =
 					new TfrOperationLamination(izdelie,
 					fSbornyZakaz->listOfLaminats, eFilterLaminat->Text);
-				lam->name += " ламината";
+				lam->name = "Накатка ламината";
 
 				lam->cbTool->ItemIndex = rgLaminationKind->ItemIndex;
 				lam->cbToolChange(NULL);
@@ -286,40 +313,24 @@ void __fastcall TFormAddTechnos::btCreateClick(TObject *Sender) {
 				new TfrOperationPlotter(izdelie);
 			}
 
-			// задник Первый
-			if (chboxOperations->Items->Strings[i] == "Задник (первый)") {
-
-			AddSinglePlaceOperations<TfrPlaceLamination>(sbSingleOperations,
-					fSbornyZakaz->listOfSkotches);
-				TfrPlaceLamination *lam =
-					(TfrPlaceLamination*)izdelie->listOfOperations->Last();
-				lam->name += " скотча";
-				lam->cbTool->ItemIndex = 0; // холодное
-				lam->cbToolChange(NULL);
-
-				TfrOperationLamination *peno =
-					new TfrOperationLamination(izdelie,
-					fSbornyZakaz->listOfBacks, eFilterBacks->Text);
-				peno->name += " на задник";
-				peno->cbTool->ItemIndex = 0; // холодное
-				peno->cbToolChange(NULL);
-			}
-
 			// задник последующий
-			if (chboxOperations->Items->Strings[i] == "Задник") {
+			if (chboxOperations->Items->Strings[i] == "Накатка на задник") {
 				TfrOperationLamination *skotch =
 					new TfrOperationLamination(izdelie,
-					fSbornyZakaz->listOfSkotches, "Mount Adhesive 140");
-				skotch->name += " скотча";
+					fSbornyZakaz->listOfSkotches, "скотч двухсторонний 140");
+				skotch->name = "Накатка скотча";
 				skotch->cbTool->ItemIndex = 0; // холодное
 				skotch->cbToolChange(NULL);
 
 				TfrOperationLamination *peno =
 					new TfrOperationLamination(izdelie,
 					fSbornyZakaz->listOfBacks, eFilterBacks->Text);
-				peno->name += " на задник";
+				peno->name = "Накатка на задник";
 				peno->cbTool->ItemIndex = 0; // холодное
 				peno->cbToolChange(NULL);
+
+				// резка
+				new TfrOperationRezka(izdelie);
 			}
 
 			if (chboxOperations->Items->Strings[i] == "Нарезка багета") {
@@ -350,7 +361,13 @@ void __fastcall TFormAddTechnos::btCreateClick(TObject *Sender) {
 	firstOperation->Selected = true;
 
 	// настраиваем Заголовок заказа
-	fSbornyZakaz->ZakazType = lbTechos->Items->Strings[lbTechos->ItemIndex];
+	fSbornyZakaz->ZakazType = lbTechnos->Items->Strings[lbTechnos->ItemIndex];
+	for (int i = 0; i < chboxOperations->Items->Count; i++) {
+		if (chboxOperations->Checked[i])
+		{
+			fSbornyZakaz->ZakazType += " + " + chboxOperations->Items->Strings[i];
+		}
+	}
 	fSbornyZakaz->UpdateZakazCaption();
 
 	// все пересчитываем
@@ -360,8 +377,8 @@ void __fastcall TFormAddTechnos::btCreateClick(TObject *Sender) {
 
 // ---------------------------------------------------------------------------
 void __fastcall TFormAddTechnos::FormCreate(TObject *Sender) {
-	lbTechos->ItemIndex = 0;
-	lbTechosClick(NULL);
+	lbTechnos->ItemIndex = 0;
+	lbTechnosClick(NULL);
 }
 
 // ---------------------------------------------------------------------------
@@ -994,7 +1011,7 @@ void __fastcall TFormAddTechnos::SetupBackFilters() {
 }
 
 // ---------------------------------------------------------------------------
-void __fastcall TFormAddTechnos::lbTechosClick(TObject * Sender) {
+void __fastcall TFormAddTechnos::lbTechnosClick(TObject * Sender) {
 
 	for (int i = 0; i < listOfcbPlaceFilters->Count; i++) {
 		TComboBox *cb = (TComboBox*)listOfcbPlaceFilters->Items[i];
@@ -1006,57 +1023,46 @@ void __fastcall TFormAddTechnos::lbTechosClick(TObject * Sender) {
 
 	chboxOperations->CheckAll(false);
 
-	switch (lbTechos->ItemIndex) {
-	case 0: {
-			CheckOperations("Печать (широкий формат)|Резка");
+	switch (lbTechnos->ItemIndex) {
+	case 0: { // Печать (широкоформатная)
+			CheckOperations("Резка");
 			SetupPrintFilters();
 			break;
 		}
-	case 1: {
-			CheckOperations("Плоттерная резка (первая)|Выборка|Монтажка|Резка");
+	case 1: { // Плоттерная резка
+			CheckOperations("Выборка|Монтажка|Резка");
 			SetupVinilFilters();
 			break;
 		}
-	case 2: {
-			CheckOperations(
-				"Печать (широкий формат)|Плоттерная резка|Выборка|Монтажка|Резка");
+	case 2: { // Печать (широкоформатная) +
+			CheckOperations("Плоттерная резка|Выборка|Монтажка|Резка");
 			SetupPrintFilters();
 			break;
 		}
-	case 3: {
-			CheckOperations("Печать (широкий формат)|Задник|Резка");
+	case 3: { // Печать (широкоформатная) +
+			CheckOperations("Накатка на задник");
 			SetupPrintFilters();
 			break;
 		}
-	case 4: {
-			CheckOperations("Печать (широкий формат)|Задник|Ламинация|Резка");
+	case 4: { // Печать (широкоформатная) +
+			CheckOperations("Накатка на задник|Ламинация");
 			SetupPrintFilters();
 			break;
 		}
-	case 5: {
-			CheckOperations("Дизайн");
-			break;
-		}
-	case 6: {
-			CheckOperations("Ламинация (первая)|Резка");
+	case 5: { // Ламинация
+			CheckOperations("Резка");
 			SetupVinilFilters();
 			break;
 		}
-	case 7: {
-			CheckOperations("Ламинация (первая)|Задник|Резка");
+	case 6: { // Ламинация +
+			CheckOperations("Накатка на задник");
 			SetupVinilFilters();
 			break;
 		}
-	case 8: {
-			CheckOperations("Задник (первый)|Резка");
+	case 7: { // Накатка на задник
 			SetupBackFilters();
 			break;
 		}
-	case 9: {
-			CheckOperations("Наклейка");
-			break;
-		}
-
 	default: ;
 	}
 }

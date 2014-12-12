@@ -1,10 +1,9 @@
 inherited frMaterialSelectable: TfrMaterialSelectable
-  Width = 921
   Height = 57
   ExplicitHeight = 57
   inherited BasePanel: TPanel
-    Width = 921
     Height = 27
+    ExplicitWidth = 921
     ExplicitHeight = 27
     object lbInfo: TLabel
       Left = 16
@@ -15,7 +14,6 @@ inherited frMaterialSelectable: TfrMaterialSelectable
     end
   end
   inherited pnlSelect: TPanel
-    Width = 921
     inherited LabelSelect: TLabel
       Top = 7
       ExplicitTop = 7

@@ -1,7 +1,5 @@
 inherited frOperationBaget: TfrOperationBaget
-  Width = 864
   inherited BasePanel: TPanel
-    Width = 864
     object chPattern: TCheckBox
       Left = 168
       Top = 7
@@ -13,11 +11,10 @@ inherited frOperationBaget: TfrOperationBaget
     end
   end
   inherited pnlSelect: TPanel
-    Width = 864
     ExplicitWidth = 451
   end
   inherited sbForMatFrame: TScrollBox
-    Width = 864
+    ExplicitWidth = 864
     ExplicitHeight = 47
   end
 end

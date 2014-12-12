@@ -30,6 +30,16 @@ __fastcall TfBook::TfBook(TComponent* Owner) : TForm(Owner) {
 	slgoods = new TStringList();
 	slgoods->StrictDelimiter = true;
 	slgoods->Delimiter = '|';
+
+	// список дизайнеров
+	for (int i = 0; i < fConnect->cbUser->Items->Count; i++) {
+		TBasicUser *user = (TBasicUser*)fConnect->cbUser->Items->Objects[i];
+		if (user->role == "Дизайнер") {
+			cbDesigner->Items->Add(user->login);
+		}
+	}
+
+	cbFormat->ItemIndex = 0;
 }
 
 // ---------------------------------------------------------------------------
@@ -114,6 +124,8 @@ double TBlock::Sum() {
 		codes = "|00000002271|00000002256";
 	if (format == "20x20")
 		codes = "|00000002268|00000002221";
+	if (format == "25x25")
+		codes = "|00000002270|00000002252";
 	if (format == "20x30 альбом")
 		codes = "|00000002269|00000002254";
 	if (format == "20x30 портрет")
@@ -176,17 +188,35 @@ UnicodeString TBlock::Select() {
 	sl->StrictDelimiter = true;
 
 	if (what == "Форзац") {
-		smater = "00000002410|00000002410|00000002342|00000002411|00000002411|";
-		smater += "00000002412|00000002413|00000002413|00000002414";
+		smater = "00000002410|"; // 10x15 альбом
+		smater += "00000002410|"; // 10x15 портрет
+		smater += "00000002342|"; // 15x15
+		smater += "00000002411|"; // 15x20 альбом
+		smater += "00000002411|"; // 15x20 портрет
+		smater += "00000002412|"; // 20x20
+		smater += "00000002414|"; // 25x25
+		smater += "00000002413|"; // 20x30 альбом
+		smater += "00000002413|"; // 20x30 портрет
+		smater += "00000002414"; // 30x30
 	}
+
 	if (what == "Блок") {
-		smater = "00000002250|00000002251|00000002245|00000002247|00000002246|";
-		smater += "00000002238|00000002248|00000002249|00000002244";
+		smater = "00000002250|"; // 10x15 альбом
+		smater += "00000002251|"; // 10x15 портрет
+		smater += "00000002245|"; // 15x15
+		smater += "00000002247|"; // 15x20 альбом
+		smater += "00000002246|"; // 15x20 портрет
+		smater += "00000002238|"; // 20x20
+		smater += "00000002244|"; // 25x25
+		smater += "00000002248|"; // 20x30 альбом
+		smater += "00000002249|"; // 20x30 портрет
+		smater += "00000002244"; // 30x30
 	}
 
 	sl->DelimitedText = smater;
-	return sl->Strings[fBook->book->format];
+	UnicodeString block = sl->Strings[fBook->book->format];
 	delete sl;
+	return block;
 }
 
 // ---------------------------------------------------------------------------
@@ -198,33 +228,87 @@ UnicodeString TCover::Select(UnicodeString what) {
 
 	switch (typecover) {
 	case 0:
-		smount = "00000002372|00000002372|00000002389|00000002374|00000002374|";
-		smount += "00000002386|00000002387|00000002387|00000002388";
+		smount = "00000002372|"; // 10x15 альбом
+		smount += "00000002372|"; // 10x15 портрет
+		smount += "00000002389|"; // 15x15
+		smount += "00000002374|"; // 15x20 альбом
+		smount += "00000002374|"; // 15x20 портрет
+		smount += "00000002386|"; // 20x20
+		smount += "00000002388|"; // 25x25
+		smount += "00000002387|"; // 20x30 альбом
+		smount += "00000002387|"; // 20x30 портрет
+		smount += "00000002388"; // 30x30
 
 		if (fBook->book->type == 0) { // фотокнига
-			smater =
-				"00000002329|00000002330|00000002327|00000002331|00000002332|";
-			smater += "00000002314|00000002334|00000002333|00000002328";
+			smater = "00000002329|"; // 10x15 альбом
+			smater += "00000002330|"; // 10x15 портрет
+			smater += "00000002327|"; // 15x15
+			smater += "00000002331|"; // 15x20 альбом
+			smater += "00000002332|"; // 15x20 портрет
+			smater += "00000002314|"; // 20x20
+			smater += "00000002328|"; // 25x25
+			smater += "00000002334|"; // 20x30 альбом
+			smater += "00000002333|"; // 20x30 портрет
+			smater += "00000002328"; // 30x30
 		}
 		if (fBook->book->type == 1) { // планшет
-			smater =
-				"00000002250|00000002251|00000002245|00000002247|00000002246|";
-			smater += "00000002238|00000002248|00000002249|00000002244";
+			smater = "00000002250|"; // 10x15 альбом
+			smater += "00000002251|"; // 10x15 портрет
+			smater += "00000002245|"; // 15x15
+			smater += "00000002247|"; // 15x20 альбом
+			smater += "00000002246|"; // 15x20 портрет
+			smater += "00000002238|"; // 20x20
+			smater += "00000002244|"; // 25x25
+			smater += "00000002248|"; // 20x30 альбом
+			smater += "00000002249|"; // 20x30 портрет
+			smater += "00000002244"; // 30x30
 		}
 		break;
 	case 1:
-		smount = "00000002353|00000002353|00000002351|00000002354|00000002354|";
-		smount += "00000002317|00000002355|00000002355|00000002352";
+		smount = "00000002353|"; // 10x15 альбом
+		smount += "00000002353|"; // 10x15 портрет
+		smount += "00000002351|"; // 15x15
+		smount += "00000002354|"; // 15x20 альбом
+		smount += "00000002354|"; // 15x20 портрет
+		smount += "00000002317|"; // 20x20
+		smount += "00000002352|"; // 25x25
+		smount += "00000002355|"; // 20x30 альбом
+		smount += "00000002355|"; // 20x30 портрет
+		smount += "00000002352"; // 30x30
 
-		smater = "00000002329|00000002330|00000002327|00000002331|00000002332|";
-		smater += "00000002314|00000002334|00000002333|00000002328";
+		smater = "00000002329|"; // 10x15 альбом
+		smater += "00000002330|"; // 10x15 портрет
+		smater += "00000002327|"; // 15x15
+		smater += "00000002331|"; // 15x20 альбом
+		smater += "00000002332|"; // 15x20 портрет
+		smater += "00000002314|"; // 20x20
+		smater += "00000002328|"; // 25x25
+		smater += "00000002334|"; // 20x30 альбом
+		smater += "00000002333|"; // 20x30 портрет
+		smater += "00000002328"; // 30x30
 		break;
 	case 2:
-		smount = "00000002384|00000002384|00000002392|00000002393|00000002393|";
-		smount += "00000002394|00000002395|00000002395|00000002396";
+		smount = "00000002384|"; // 10x15 альбом
+		smount += "00000002384|"; // 10x15 портрет
+		smount += "00000002392|"; // 15x15
+		smount += "00000002393|"; // 15x20 альбом
+		smount += "00000002393|"; // 15x20 портрет
+		smount += "00000002394|"; // 20x20
+		smount += "00000002396|"; // 25x25
+		smount += "00000002395|"; // 20x30 альбом
+		smount += "00000002395|"; // 20x30 портрет
+		smount += "00000002396"; // 30x30
 
-		smater = "00000002399|00000002399|00000002400|00000002401|00000002401|";
-		smater += "00000002402|00000002403|00000002403|00000002404";
+		smater = "00000002399|"; // 10x15 альбом
+		smater += "00000002399|"; // 10x15 портрет
+		smater += "00000002400|"; // 15x15
+		smater += "00000002401|"; // 15x20 альбом
+		smater += "00000002401|"; // 15x20 портрет
+		smater += "00000002402|"; // 20x20
+		smater += "00000002404|"; // 25x25
+		smater += "00000002403|"; // 20x30 альбом
+		smater += "00000002403|"; // 20x30 портрет
+		smater += "00000002404"; // 30x30
 		break;
 	}
 
@@ -233,9 +317,9 @@ UnicodeString TCover::Select(UnicodeString what) {
 	if (what == "мт")
 		sl->DelimitedText = smater;
 
-	return sl->Strings[fBook->book->format];
-
+	UnicodeString cover = sl->Strings[fBook->book->format];
 	delete sl;
+	return cover;
 }
 
 // ---------------------------------------------------------------------------
@@ -260,6 +344,8 @@ double TCover::Sum() {
 		codes = "|00000002357|00000002323|00000001740|00000002498|";
 	if (format == "20x20")
 		codes = "|00000002359|00000002321|00000001740|00000002499|";
+	if (format == "25x25")
+		codes = "|00000002348|00000002326|00000001741|00000002500|";
 	if (format == "20x30 альбом")
 		codes = "|00000002360|00000002325|00000001741|00000002499|";
 	if (format == "20x30 портрет")
@@ -472,41 +558,6 @@ void __fastcall TfBook::FormDestroy(TObject * Sender) {
 	delete book; // удаляем книгу
 	delete sl;
 	delete slgoods;
-}
-
-// ---------------------------------------------------------------------------
-void __fastcall TfBook::Button3Click(TObject * Sender) {
-
-	/*
-	 UnicodeString query, send_params, get_params;
-	 query = "НайтиТоварыПоРодителю";
-	 send_params = eGoodParent->Text + "|" + eGoodPrice->Text;
-	 get_params = "Наименование|Характер|Цена";
-	 // получить список номеклатур
-	 UnicodeString s = ClientModule1->ServerMethods1Client->Find(query,
-	 send_params, get_params);
-
-	 TStringList *sl1 = new TStringList();
-	 sl1->StrictDelimiter = true;
-	 sl1->Delimiter = '|';
-	 sl1->DelimitedText = s;
-
-	 StringGrid1->RowCount = 2;
-	 StringGrid1->Rows[1]->Clear();
-
-	 StringGrid1->ColCount = 3;
-	 StringGrid1->ColWidths[0] = 300;
-	 StringGrid1->RowCount = sl1->Count / StringGrid1->ColCount + 1;
-
-	 for (int i = 1, counter = 0; i < StringGrid1->RowCount; i++) {
-	 for (int j = 0; j < StringGrid1->ColCount; j++) {
-	 StringGrid1->Cells[j][i] = sl1->Strings[counter];
-	 counter++;
-	 }
-	 }
-
-	 delete sl1;
-	 */
 }
 
 // ---------------------------------------------------------------------------
@@ -773,10 +824,10 @@ void __fastcall TfBook::CreateReport(TObject *Sender) {
 	memo = (TfrxMemoView*)frxReport1->FindObject("MemoCorners");
 	if (chbox->Checked) {
 		memo->Text = "Уголки: " + cbCorners->Text;
-	} else {
+	}
+	else {
 		memo->Text = "Уголки";
-    }
-
+	}
 
 	chbox = (TfrxCheckBoxView*)frxReport1->FindObject("chLaminat");
 	chbox->Checked = chLaminat->Checked;

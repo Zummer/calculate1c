@@ -26,7 +26,7 @@ __fastcall TfConnect::TfConnect(TComponent* Owner) : TForm(Owner) {
 	curUser = new TBasicUser("Не подключен");
 	listOfPriceType = new TList();
 
-	version = "2.1.1";
+	version = "2.1.4";
 	Caption = "Подключение к 1с. Версия " + version;
 }
 
@@ -164,11 +164,8 @@ void __fastcall TfConnect::sbtGetUsersClick(TObject *Sender) {
 		// не забыть удалить юзеров
 		TBasicUser *user = new TBasicUser(sl->Strings[i++]);
 		user->role = sl->Strings[i];
-//		user->DayOklad = StrToInt(sl->Strings[i++]);
-//		user->managerPercent = StrToInt(sl->Strings[i]);
 		cbUser->Items->AddObject(user->login, user);
 	}
-	//cbUser->ItemIndex = 0;
 	LabelCurUser->Caption = cbUser->Text;
 }
 

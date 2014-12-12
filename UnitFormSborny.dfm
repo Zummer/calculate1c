@@ -138,10 +138,10 @@ object fSbornyZakaz: TfSbornyZakaz
       end
     end
     object btSum: TButton
-      Left = 631
-      Top = 8
-      Width = 82
-      Height = 75
+      Left = 623
+      Top = 6
+      Width = 90
+      Height = 77
       Caption = #1055#1077#1088#1077#1089#1095#1080#1090#1072#1090#1100' '#1079#1072#1082#1072#1079
       TabOrder = 4
       WordWrap = True
@@ -311,7 +311,7 @@ object fSbornyZakaz: TfSbornyZakaz
     PrintOptions.PrintMode = pmJoin
     PrintOptions.PrintOnSheet = 9
     ReportOptions.CreateDate = 41294.654720208300000000
-    ReportOptions.LastChange = 41933.429265347220000000
+    ReportOptions.LastChange = 41985.461570324070000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -338,7 +338,7 @@ object fSbornyZakaz: TfSbornyZakaz
         Left = 3.779530000000000000
         Top = 81.267780000000000000
         Width = 729.449290000000000000
-        Height = 34.015770000000000000
+        Height = 68.031540000000000000
         ShowHint = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -352,7 +352,7 @@ object fSbornyZakaz: TfSbornyZakaz
       end
       object mAgent: TfrxMemoView
         Left = 3.779530000000000000
-        Top = 153.177257500000000000
+        Top = 179.633967500000000000
         Width = 453.543600000000000000
         Height = 22.677180000000000000
         ShowHint = False
@@ -367,7 +367,7 @@ object fSbornyZakaz: TfSbornyZakaz
       end
       object mPhone: TfrxMemoView
         Left = 3.779530000000000000
-        Top = 178.968615000000000000
+        Top = 205.425325000000000000
         Width = 453.543600000000000000
         Height = 22.677180000000000000
         ShowHint = False
@@ -382,7 +382,7 @@ object fSbornyZakaz: TfSbornyZakaz
       end
       object mManager: TfrxMemoView
         Left = 3.779530000000000000
-        Top = 204.759972500000000000
+        Top = 231.216682500000000000
         Width = 449.764070000000000000
         Height = 18.897650000000000000
         ShowHint = False
@@ -391,7 +391,7 @@ object fSbornyZakaz: TfSbornyZakaz
       end
       object mFinance: TfrxMemoView
         Left = 3.779530000000000000
-        Top = 127.385900000000000000
+        Top = 153.842610000000000000
         Width = 449.764070000000000000
         Height = 18.897650000000000000
         ShowHint = False
@@ -427,7 +427,7 @@ object fSbornyZakaz: TfSbornyZakaz
       end
       object mPrim: TfrxMemoView
         Left = 3.779530000000000000
-        Top = 230.551330000000000000
+        Top = 257.008040000000000000
         Width = 714.331170000000000000
         Height = 18.897650000000000000
         ShowHint = False

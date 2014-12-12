@@ -1,15 +1,14 @@
 object frMaterial: TfrMaterial
   Left = 0
   Top = 0
-  Width = 821
+  Width = 451
   Height = 56
   Align = alTop
   TabOrder = 0
-  ExplicitWidth = 451
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 821
+    Width = 824
     Height = 56
     Align = alClient
     TabOrder = 0

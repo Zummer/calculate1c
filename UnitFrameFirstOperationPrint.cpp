@@ -39,15 +39,10 @@ void TfrFirstOperationPrint::SetParams() {
 // ---------------------------------------------------------------------------
 void TfrFirstOperationPrint::Count() {
 
+	// если это именно фотопечать, не графика
 	if (chbFotoPrint->Checked) {
 		primeNom->nomenklatura->price =
-			primeNom->nomenklatura->startPrice *
-			matNom->nomenklatura->ratioPrice * 1.5;
-	}
-	else {
-		primeNom->nomenklatura->price =
-			primeNom->nomenklatura->startPrice *
-			matNom->nomenklatura->ratioPrice;
+			primeNom->nomenklatura->price * 1.5;
 	}
 
 	// определяем количество первичной номеклатуры

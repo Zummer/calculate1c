@@ -5,6 +5,7 @@
 
 #include "FormServerUnit.h"
 #include "ServerContainerUnit1.h"
+#include "ServerFormSettings.h"
 
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -36,4 +37,10 @@ void __fastcall TfMainServer::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TfMainServer::btSettingsClick(TObject *Sender)
+{
+	FormSettings->Show();
+}
+//---------------------------------------------------------------------------
 

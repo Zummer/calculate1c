@@ -1,9 +1,7 @@
 inherited frOperationWithMaterial: TfrOperationWithMaterial
-  Width = 792
   Height = 256
   ExplicitHeight = 256
   inherited BasePanel: TPanel
-    Width = 792
     Height = 99
     Align = alTop
     ExplicitHeight = 99
@@ -20,17 +18,13 @@ inherited frOperationWithMaterial: TfrOperationWithMaterial
       OnClick = chkEveryDetailHasOwnMaterialClick
     end
   end
-  inherited pnlSelect: TPanel
-    Width = 792
-  end
   object sbForMatFrame: TScrollBox
     Left = 0
     Top = 129
-    Width = 792
+    Width = 451
     Height = 127
     Align = alClient
     BorderStyle = bsNone
     TabOrder = 2
-    ExplicitWidth = 451
   end
 end

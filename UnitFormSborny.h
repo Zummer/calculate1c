@@ -159,6 +159,7 @@ private: // User declarations
 	UnicodeString ZakazType; // тип заказа
 
 	void __fastcall UpdateZakazCaption();
+	UnicodeString CreateZakazName(); // формируем заголовок ВСЕГО заказа
 
 	TObjectList *listOfIzdelies; // список изделий
 	TObjectList *listOfAgents; // список агентов
@@ -186,6 +187,7 @@ private: // User declarations
 	TObjectList *listOfPodramniks; // подрамник
 
 	TStringList *slgoods; // данные о товарах для 1с
+	TStringList *sldescription; // описание заказа
 	UnicodeString ZakazNumber;
 	double allsum;
 };

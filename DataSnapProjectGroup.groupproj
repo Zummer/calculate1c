@@ -3,10 +3,10 @@
 			<ProjectGuid>{31C71636-E3E6-475A-A79D-48F484C39CCE}</ProjectGuid>
 		</PropertyGroup>
 		<ItemGroup>
-			<Projects Include="ServerDSport.cbproj">
+			<Projects Include="ServerDSport2.cbproj">
 				<Dependencies/>
 			</Projects>
-			<Projects Include="Client_2.cbproj">
+			<Projects Include="Client_213.cbproj">
 				<Dependencies/>
 			</Projects>
 		</ItemGroup>
@@ -17,32 +17,32 @@
 				<Default.Personality/>
 			</BorlandProject>
 		</ProjectExtensions>
-		<Target Name="ServerDSport">
-			<MSBuild Projects="ServerDSport.cbproj"/>
+		<Target Name="ServerDSport2">
+			<MSBuild Projects="ServerDSport2.cbproj"/>
 		</Target>
-		<Target Name="ServerDSport:Clean">
-			<MSBuild Projects="ServerDSport.cbproj" Targets="Clean"/>
+		<Target Name="ServerDSport2:Clean">
+			<MSBuild Projects="ServerDSport2.cbproj" Targets="Clean"/>
 		</Target>
-		<Target Name="ServerDSport:Make">
-			<MSBuild Projects="ServerDSport.cbproj" Targets="Make"/>
+		<Target Name="ServerDSport2:Make">
+			<MSBuild Projects="ServerDSport2.cbproj" Targets="Make"/>
 		</Target>
-		<Target Name="Client_2">
-			<MSBuild Projects="Client_2.cbproj"/>
+		<Target Name="Client_213">
+			<MSBuild Projects="Client_213.cbproj"/>
 		</Target>
-		<Target Name="Client_2:Clean">
-			<MSBuild Projects="Client_2.cbproj" Targets="Clean"/>
+		<Target Name="Client_213:Clean">
+			<MSBuild Projects="Client_213.cbproj" Targets="Clean"/>
 		</Target>
-		<Target Name="Client_2:Make">
-			<MSBuild Projects="Client_2.cbproj" Targets="Make"/>
+		<Target Name="Client_213:Make">
+			<MSBuild Projects="Client_213.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="ServerDSport;Client_2"/>
+			<CallTarget Targets="ServerDSport2;Client_213"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="ServerDSport:Clean;Client_2:Clean"/>
+			<CallTarget Targets="ServerDSport2:Clean;Client_213:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="ServerDSport:Make;Client_2:Make"/>
+			<CallTarget Targets="ServerDSport2:Make;Client_213:Make"/>
 		</Target>
 		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
 	</Project>

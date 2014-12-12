@@ -1,0 +1,629 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{03C262A8-828F-4537-BF04-33C03E136EF4}</ProjectGuid>
+			<ProjectVersion>12.3</ProjectVersion>
+			<MainSource>Client_214.cpp</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform>Win32</Platform>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<ILINK_LibraryPath>C:\Program Files (x86)\FastReports\FastReport 4\LibD15\;..\datasnap4\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>C:\Program Files (x86)\FastReports\FastReport 4\LibD15\;..\datasnap4\;$(IncludePath)</IncludePath>
+			<OutputExt>exe</OutputExt>
+			<LinkPackageStatics>rtl.lib;vcl.lib;dbrtl.lib;dbexpress.lib;DbxCommonDriver.lib;dsnap.lib;vcldb.lib;DbxClientDriver.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;vclx.lib;tmsd2011.lib;adortl.lib;bdertl.lib;xmlrtl.lib;vclactnband.lib;vclimg.lib;VclSmp.lib;frx15.lib;fs15.lib;fqb150.lib;tmsexd2011.lib;Samples.lib</LinkPackageStatics>
+			<PackageImports>vclimg.bpi;vcl.bpi;vclx.bpi;dbrtl.bpi;Rave90VCL.bpi;bdertl.bpi;rtl.bpi;bcbie.bpi;xmlrtl.bpi;vclactnband.bpi;bcbsmp.bpi;VclSmp.bpi;svnui.bpi;svn.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vcldb.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclie.bpi;inet.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapClient.bpi;dbxcds.bpi;DataSnapServer.bpi;AzureCloud.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;intrawebdb_110_150.bpi;Intraweb_110_150.bpi;iw11tmsd2011.bpi;iw11tmsgridded2011.bpi;iw11tmsgridd2011.bpi;iw11tmsxlsd2011.bpi;CodeSiteExpressVcl.bpi;dacvcl150.bpi;dac150.bpi;crcontrols150.bpi;mydacvcl150.bpi;mydac150.bpi;mysqlmon150.bpi;frx15.bpi;frxADO15.bpi;frxBDE15.bpi;frxDB15.bpi;frxDBX15.bpi;frxe15.bpi;frxIBX15.bpi;frxTee15.bpi;fs15.bpi;fsADO15.bpi;fsBDE15.bpi;fsDB15.bpi;fsIBX15.bpi;fsTee15.bpi</PackageImports>
+			<_TCHARMapping>wchar_t</_TCHARMapping>
+			<ProjectType>CppVCLApplication</ProjectType>
+			<Multithreaded>true</Multithreaded>
+			<AllPackageLibs>rtl.lib;vcl.lib;dbrtl.lib;dbexpress.lib;DbxCommonDriver.lib;dsnap.lib;vcldb.lib;DbxClientDriver.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;vclx.lib;tmsd2011.lib;adortl.lib;bdertl.lib;xmlrtl.lib;vclactnband.lib;vclimg.lib;VclSmp.lib;frx15.lib;fs15.lib;fqb150.lib;tmsexd2011.lib;Samples.lib</AllPackageLibs>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE</DCC_UnitAlias>
+			<DynamicRTL>true</DynamicRTL>
+			<IntermediateOutputDir>.\$(Config)\$(Platform)</IntermediateOutputDir>
+			<FinalOutputDir>.\$(Config)\$(Platform)</FinalOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+		</PropertyGroup>
+		<Import Condition="'$(Cfg_1)'!='' And Exists('123.optset')" Project="123.optset"/>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<Defines>_DEBUG;$(Defines)</Defines>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<DCC_Define>DEBUG</DCC_Define>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<CfgDependentOn>123.optset</CfgDependentOn>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DynamicRTL>false</DynamicRTL>
+			<Defines>NDEBUG;$(Defines)</Defines>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="Agent.cpp">
+				<DependentOn>Agent.h</DependentOn>
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Base.cpp">
+				<DependentOn>Base.h</DependentOn>
+				<BuildOrder>60</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Burner.cpp">
+				<DependentOn>Burner.h</DependentOn>
+				<BuildOrder>73</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ClientClassesUnit1.cpp">
+				<DependentOn>ClientClassesUnit1.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ClientModuleUnit1.cpp">
+				<Form>ClientModule1</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>ClientModuleUnit1.h</DependentOn>
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Client_214.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="Client_214.res">
+				<ModuleName>Client_214.res</ModuleName>
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="DesignOrderUnit.cpp">
+				<Form>fDesignOrder</Form>
+				<DependentOn>DesignOrderUnit.h</DependentOn>
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Element.cpp">
+				<DependentOn>Element.h</DependentOn>
+				<BuildOrder>58</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FindOrdersUnit.cpp">
+				<Form>fFindOrders</Form>
+				<DependentOn>FindOrdersUnit.h</DependentOn>
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormClientUnit.cpp">
+				<Form>fConnect</Form>
+				<DependentOn>FormClientUnit.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormFotoBookUnit.cpp">
+				<Form>fBook</Form>
+				<DependentOn>FormFotoBookUnit.h</DependentOn>
+				<BuildOrder>15</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="HandCutter.cpp">
+				<DependentOn>HandCutter.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="HWTool.cpp">
+				<DependentOn>HWTool.h</DependentOn>
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Laminator.cpp">
+				<DependentOn>Laminator.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MainFormUnit.cpp">
+				<Form>fMainClient</Form>
+				<DependentOn>MainFormUnit.h</DependentOn>
+				<BuildOrder>7</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Material.cpp">
+				<VirtualFolder>{54F2330F-9006-4486-9296-FB92D54F5A0B}</VirtualFolder>
+				<DependentOn>Material.h</DependentOn>
+				<BuildOrder>27</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MyShape.cpp">
+				<DependentOn>MyShape.h</DependentOn>
+				<BuildOrder>55</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MyThread1Unit.cpp">
+				<DependentOn>MyThread1Unit.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Nomenklatura.cpp">
+				<DependentOn>Nomenklatura.h</DependentOn>
+				<BuildOrder>28</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="OrderUnit.cpp">
+				<DependentOn>OrderUnit.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PassUnit.cpp">
+				<Form>fPass</Form>
+				<DependentOn>PassUnit.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Plotter.cpp">
+				<DependentOn>Plotter.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Printer.cpp">
+				<DependentOn>Printer.h</DependentOn>
+				<BuildOrder>30</BuildOrder>
+			</CppCompile>
+			<None Include="PrinterCalcUnit.cpp">
+				<Exclude>True</Exclude>
+				<CreateIndex>9</CreateIndex>
+				<Form>fPrinterCalc</Form>
+				<DependentOn>PrinterCalcUnit.h</DependentOn>
+				<BuildOrder>17</BuildOrder>
+			</None>
+			<None Include="RollTool.cpp">
+				<Exclude>True</Exclude>
+				<DependentOn>RollTool.h</DependentOn>
+				<BuildOrder>39</BuildOrder>
+			</None>
+			<CppCompile Include="ShapeBase.cpp">
+				<DependentOn>ShapeBase.h</DependentOn>
+				<BuildOrder>61</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ShapeDetail.cpp">
+				<DependentOn>ShapeDetail.h</DependentOn>
+				<BuildOrder>54</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ShapeElement.cpp">
+				<DependentOn>ShapeElement.h</DependentOn>
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ShapeSheet.cpp">
+				<DependentOn>ShapeSheet.h</DependentOn>
+				<BuildOrder>56</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Sheet.cpp">
+				<DependentOn>Sheet.h</DependentOn>
+				<BuildOrder>59</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SquareDetail.cpp">
+				<DependentOn>SquareDetail.h</DependentOn>
+				<BuildOrder>53</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SquareElement.cpp">
+				<DependentOn>SquareElement.h</DependentOn>
+				<BuildOrder>58</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Termopress.cpp">
+				<DependentOn>Termopress.h</DependentOn>
+				<BuildOrder>64</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Tool.cpp">
+				<DependentOn>Tool.h</DependentOn>
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ToolPrepareMat.cpp">
+				<DependentOn>ToolPrepareMat.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ToolPrepareTool.cpp">
+				<DependentOn>ToolPrepareTool.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TypePrice.cpp">
+				<DependentOn>TypePrice.h</DependentOn>
+				<BuildOrder>31</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ufrSpisok.cpp">
+				<Form>frSpisok</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>ufrSpisok.h</DependentOn>
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitBaseForSell.cpp">
+				<DependentOn>UnitBaseForSell.h</DependentOn>
+				<BuildOrder>71</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFirstLamination.cpp">
+				<VirtualFolder>{61C73DE2-267B-43D0-A400-6E765FB60254}</VirtualFolder>
+				<Form>frPlaceLamination</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFirstLamination.h</DependentOn>
+				<BuildOrder>74</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFormAddTechnos.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>FormAddTechnos</Form>
+				<DependentOn>UnitFormAddTechnos.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFormPlace.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>FormPlace</Form>
+				<DependentOn>UnitFormPlace.h</DependentOn>
+				<BuildOrder>62</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFormSborny.cpp">
+				<VirtualFolder>{C0B7365A-FEC4-4A94-84F2-9D252E80E839}</VirtualFolder>
+				<Form>fSbornyZakaz</Form>
+				<DependentOn>UnitFormSborny.h</DependentOn>
+				<BuildOrder>20</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameDetailCount.cpp">
+				<Form>FrameDetailCount</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameDetailCount.h</DependentOn>
+				<BuildOrder>67</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameFirstOperationPlotter.cpp">
+				<VirtualFolder>{46966CFE-2251-4280-B0BE-43FDFDEAECCC}</VirtualFolder>
+				<Form>frFirstOperationPlotter</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameFirstOperationPlotter.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameFirstOperationPrint.cpp">
+				<VirtualFolder>{DFD969A1-C356-4F93-962A-502706F8F9BE}</VirtualFolder>
+				<Form>frFirstOperationPrint</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameFirstOperationPrint.h</DependentOn>
+				<BuildOrder>37</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameIzdelie.cpp">
+				<VirtualFolder>{C0B7365A-FEC4-4A94-84F2-9D252E80E839}</VirtualFolder>
+				<Form>frIzdelie</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameIzdelie.h</DependentOn>
+				<BuildOrder>21</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameMaterial.cpp">
+				<VirtualFolder>{54F2330F-9006-4486-9296-FB92D54F5A0B}</VirtualFolder>
+				<Form>frMaterial</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameMaterial.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameMaterialLength.cpp">
+				<VirtualFolder>{54F2330F-9006-4486-9296-FB92D54F5A0B}</VirtualFolder>
+				<Form>frMaterialLength</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameMaterialLength.h</DependentOn>
+				<BuildOrder>76</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameMaterialSelectable.cpp">
+				<VirtualFolder>{54F2330F-9006-4486-9296-FB92D54F5A0B}</VirtualFolder>
+				<Form>frMaterialSelectable</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameMaterialSelectable.h</DependentOn>
+				<BuildOrder>66</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameMaterialSquare.cpp">
+				<Form>frMaterialLength1</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameMaterialSquare.h</DependentOn>
+				<BuildOrder>77</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameMaterialSquareBase.cpp">
+				<VirtualFolder>{54F2330F-9006-4486-9296-FB92D54F5A0B}</VirtualFolder>
+				<Form>frMaterialSquareBase</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameMaterialSquareBase.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<None Include="UnitFrameNarezkaZadnika.cpp">
+				<Exclude>True</Exclude>
+				<VirtualFolder>{9149CF6B-8776-4390-860C-D7603626B6ED}</VirtualFolder>
+				<Form>frOperationNarezkaZadnika</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameNarezkaZadnika.h</DependentOn>
+				<BuildOrder>69</BuildOrder>
+			</None>
+			<CppCompile Include="UnitFrameOperation.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>frOperation</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperation.h</DependentOn>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationBaget.cpp">
+				<VirtualFolder>{FBAF823B-1CCB-4667-A93A-DA234DFCD553}</VirtualFolder>
+				<Form>frOperationBaget</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationBaget.h</DependentOn>
+				<BuildOrder>78</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationLamination.cpp">
+				<VirtualFolder>{61C73DE2-267B-43D0-A400-6E765FB60254}</VirtualFolder>
+				<Form>frOperationLamination</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationLamination.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationLuvers.cpp">
+				<Form>frOperationLuvers</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationLuvers.h</DependentOn>
+				<BuildOrder>52</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationPlotter.cpp">
+				<VirtualFolder>{46966CFE-2251-4280-B0BE-43FDFDEAECCC}</VirtualFolder>
+				<Form>frOperationPlotter</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationPlotter.h</DependentOn>
+				<BuildOrder>36</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationPodramnik.cpp">
+				<VirtualFolder>{FBAF823B-1CCB-4667-A93A-DA234DFCD553}</VirtualFolder>
+				<Form>frOperationPodramnik</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationPodramnik.h</DependentOn>
+				<BuildOrder>79</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationRezka.cpp">
+				<VirtualFolder>{9149CF6B-8776-4390-860C-D7603626B6ED}</VirtualFolder>
+				<Form>frOperationRezka</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationRezka.h</DependentOn>
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<None Include="UnitFrameOperationSquareMaterial.cpp">
+				<Exclude>True</Exclude>
+				<Form>frOperationSquareMaterial</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationSquareMaterial.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</None>
+			<CppCompile Include="UnitFrameOperationTermoTransfer.cpp">
+				<VirtualFolder>{DFD969A1-C356-4F93-962A-502706F8F9BE}</VirtualFolder>
+				<Form>frOperationTermoTransfer</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationTermoTransfer.h</DependentOn>
+				<BuildOrder>64</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationViborka.cpp">
+				<VirtualFolder>{46966CFE-2251-4280-B0BE-43FDFDEAECCC}</VirtualFolder>
+				<Form>frOperationViborka</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationViborka.h</DependentOn>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationWithLengthMat.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>frOperationWithLengthMat</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationWithLengthMat.h</DependentOn>
+				<BuildOrder>75</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationWithMaterial.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>frOperationWithMaterial</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationWithMaterial.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameOperationWithTool.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>frOperationWithTool</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameOperationWithTool.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFramePlaceCount.cpp">
+				<Form>FramePlaceCount</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFramePlaceCount.h</DependentOn>
+				<BuildOrder>66</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFramePlaceOperation.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>frPlaceOperation</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFramePlaceOperation.h</DependentOn>
+				<BuildOrder>25</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameSimpleCount.cpp">
+				<Form>FrameSimpleCount</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameSimpleCount.h</DependentOn>
+				<BuildOrder>68</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitFrameWithMat.cpp">
+				<VirtualFolder>{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}</VirtualFolder>
+				<Form>frOperationWithMat</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitFrameWithMat.h</DependentOn>
+				<BuildOrder>74</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitMyFuncs.cpp">
+				<DependentOn>UnitMyFuncs.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitOperationDesign.cpp">
+				<VirtualFolder>{B6055E88-B645-4B90-A21C-5FC2DC231C80}</VirtualFolder>
+				<Form>frOperationDesign</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitOperationDesign.h</DependentOn>
+				<BuildOrder>72</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitOperationNomeklatura.cpp">
+				<DependentOn>UnitOperationNomeklatura.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitSelectableFrame.cpp">
+				<VirtualFolder>{C0B7365A-FEC4-4A94-84F2-9D252E80E839}</VirtualFolder>
+				<Form>frSelectable</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UnitSelectableFrame.h</DependentOn>
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UnitShapeBaseForSell.cpp">
+				<DependentOn>UnitShapeBaseForSell.h</DependentOn>
+				<BuildOrder>70</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserListFormUnit.cpp">
+				<Form>fUserList</Form>
+				<DependentOn>UserListFormUnit.h</DependentOn>
+				<BuildOrder>13</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserListUnit.cpp">
+				<Form>frUserList</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>UserListUnit.h</DependentOn>
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserUnit.cpp">
+				<DependentOn>UserUnit.h</DependentOn>
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ZPUnit.cpp">
+				<Form>fZP</Form>
+				<DependentOn>ZPUnit.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<FormResources Include="UnitFrameNarezkaZadnika.dfm"/>
+			<FormResources Include="UnitFrameOperation.dfm"/>
+			<FormResources Include="UnitFrameMaterialSquareBase.dfm"/>
+			<FormResources Include="UnitFrameMaterialSelectable.dfm"/>
+			<FormResources Include="UnitFrameMaterialSquare.dfm"/>
+			<FormResources Include="UnitFrameOperationPlotter.dfm"/>
+			<FormResources Include="UnitFrameOperationPodramnik.dfm"/>
+			<FormResources Include="UnitFrameOperationLuvers.dfm"/>
+			<FormResources Include="UnitFrameOperationBaget.dfm"/>
+			<FormResources Include="UnitFrameOperationLamination.dfm"/>
+			<FormResources Include="UnitFormSborny.dfm"/>
+			<FormResources Include="UnitFrameDetailCount.dfm"/>
+			<FormResources Include="UnitFormPlace.dfm"/>
+			<FormResources Include="UnitFirstLamination.dfm"/>
+			<FormResources Include="UnitFormAddTechnos.dfm"/>
+			<FormResources Include="UnitFrameMaterial.dfm"/>
+			<FormResources Include="UnitFrameMaterialLength.dfm"/>
+			<FormResources Include="UnitFrameIzdelie.dfm"/>
+			<FormResources Include="UnitFrameFirstOperationPlotter.dfm"/>
+			<FormResources Include="UnitFrameFirstOperationPrint.dfm"/>
+			<FormResources Include="UnitSelectableFrame.dfm"/>
+			<FormResources Include="UnitOperationDesign.dfm"/>
+			<FormResources Include="UnitFrameWithMat.dfm"/>
+			<FormResources Include="ZPUnit.dfm"/>
+			<FormResources Include="UserListUnit.dfm"/>
+			<FormResources Include="UserListFormUnit.dfm"/>
+			<FormResources Include="UnitFrameOperationViborka.dfm"/>
+			<FormResources Include="UnitFrameOperationWithLengthMat.dfm"/>
+			<FormResources Include="UnitFrameOperationTermoTransfer.dfm"/>
+			<FormResources Include="UnitFrameOperationRezka.dfm"/>
+			<FormResources Include="UnitFrameOperationSquareMaterial.dfm"/>
+			<FormResources Include="UnitFramePlaceOperation.dfm"/>
+			<FormResources Include="UnitFrameSimpleCount.dfm"/>
+			<FormResources Include="UnitFramePlaceCount.dfm"/>
+			<FormResources Include="UnitFrameOperationWithMaterial.dfm"/>
+			<FormResources Include="UnitFrameOperationWithTool.dfm"/>
+			<FormResources Include="FormClientUnit.dfm"/>
+			<FormResources Include="FormFotoBookUnit.dfm"/>
+			<FormResources Include="MainFormUnit.dfm"/>
+			<FormResources Include="ClientModuleUnit1.dfm"/>
+			<FormResources Include="FindOrdersUnit.dfm"/>
+			<FormResources Include="DesignOrderUnit.dfm"/>
+			<FormResources Include="ufrSpisok.dfm"/>
+			<FormResources Include="PrinterCalcUnit.dfm"/>
+			<FormResources Include="PassUnit.dfm"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+				<DependentOn>123.optset</DependentOn>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<Source>
+						<Source Name="MainSource">Client_214.cpp</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k150.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp150.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k150.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp150.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<VFOLDERS>
+						<VFOLDER name="SbornyCalculator" ID="{C0B7365A-FEC4-4A94-84F2-9D252E80E839}">
+							<VFOLDER name="Materials" ID="{54F2330F-9006-4486-9296-FB92D54F5A0B}"/>
+							<VFOLDER name="Operations" ID="{B6055E88-B645-4B90-A21C-5FC2DC231C80}">
+								<VFOLDER name="Baget" ID="{FBAF823B-1CCB-4667-A93A-DA234DFCD553}"/>
+								<VFOLDER name="Common" ID="{C65C8189-CB0C-40F8-9F33-02704C2EAC9C}"/>
+								<VFOLDER name="Lamination" ID="{61C73DE2-267B-43D0-A400-6E765FB60254}"/>
+								<VFOLDER name="Plots" ID="{46966CFE-2251-4280-B0BE-43FDFDEAECCC}"/>
+								<VFOLDER name="Prints" ID="{DFD969A1-C356-4F93-962A-502706F8F9BE}"/>
+								<VFOLDER name="Rezkas" ID="{9149CF6B-8776-4390-860C-D7603626B6ED}"/>
+							</VFOLDER>
+						</VFOLDER>
+					</VFOLDERS>
+				</CPlusPlusBuilder.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+				<DataSnapProxyLookup>
+					<ClientClassesUnit1>{8E29B8E9-FE78-4258-A2B9-5BA30A48F2A7}</ClientClassesUnit1>
+				</DataSnapProxyLookup>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

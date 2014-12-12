@@ -1,9 +1,7 @@
 inherited frPlaceOperation: TfrPlaceOperation
-  Width = 928
   Height = 211
   ExplicitHeight = 211
   inherited BasePanel: TPanel
-    Width = 928
     object LabelIzdelieSize: TLabel [0]
       Left = 791
       Top = 86
@@ -109,7 +107,7 @@ inherited frPlaceOperation: TfrPlaceOperation
         AutoFocus = True
         SpinType = sptFloat
         Value = 0
-        DateValue = 41905.587633206020000000
+        DateValue = 41980.901257118060000000
         HexValue = 0
         IncrementFloat = 0.100000000000000000
         IncrementFloatPage = 1.000000000000000000
@@ -133,7 +131,7 @@ inherited frPlaceOperation: TfrPlaceOperation
         AutoFocus = True
         SpinType = sptFloat
         Value = 0
-        DateValue = 41905.587633206020000000
+        DateValue = 41980.901257118060000000
         HexValue = 0
         IncrementFloat = 0.100000000000000000
         IncrementFloatPage = 1.000000000000000000
@@ -157,7 +155,7 @@ inherited frPlaceOperation: TfrPlaceOperation
         AutoFocus = True
         SpinType = sptFloat
         Value = 0
-        DateValue = 41905.587633206020000000
+        DateValue = 41980.901257118060000000
         HexValue = 0
         IncrementFloat = 0.100000000000000000
         IncrementFloatPage = 1.000000000000000000
@@ -312,7 +310,6 @@ inherited frPlaceOperation: TfrPlaceOperation
     end
   end
   inherited pnlSelect: TPanel
-    Width = 928
     inherited LabelSelect: TLabel
       OnMouseDown = pnlSelectMouseDown
     end
@@ -351,8 +348,8 @@ inherited frPlaceOperation: TfrPlaceOperation
     end
   end
   inherited sbForMatFrame: TScrollBox
-    Width = 928
     Height = 82
+    ExplicitWidth = 928
     ExplicitHeight = 82
   end
 end

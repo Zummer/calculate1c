@@ -32,6 +32,39 @@ void TfrOperationRezka::SetParams() {
 
 	lbCount->Caption = "Длина резки: " + FloatToStrF(primeNom->GetCount(),
 		ffFixed, 10, 2) + " " + primeNom->nomenklatura->unit;
+
+	// проверка предыдущей операции на предмет материла
+	// может надо цену приподнять?
+
+	float ratio = 1;
+
+	TObject *operation = (TObject*)listOfPreviousOperations->Last();
+	TfrOperationWithMaterial *previousOperation =
+		dynamic_cast<TfrOperationWithMaterial*>(operation);
+
+	if (previousOperation) {
+		UnicodeString peno, karton, plastic;
+		peno = "пено";
+		karton = "картон";
+		plastic = "пластик";
+
+		if (Pos(AnsiUpperCase(karton),
+			AnsiUpperCase(previousOperation->materialFrame->matCur->nomenklatura
+			->name))) {
+			ratio = 4;
+		}
+		if (Pos(AnsiUpperCase(peno),
+			AnsiUpperCase(previousOperation->materialFrame->matCur->nomenklatura
+			->name))) {
+			ratio = 5;
+		}
+		if (Pos(AnsiUpperCase(plastic),
+			AnsiUpperCase(previousOperation->materialFrame->matCur->nomenklatura
+			->name))) {
+			ratio = 6;
+		}
+	}
+	primeNom->nomenklatura->price = primeNom->nomenklatura->startPrice * ratio;
 }
 
 // ---------------------------------------------------------------------------
@@ -56,17 +89,16 @@ void TfrOperationRezka::Count() {
 			}
 			break;
 		case 1: // детали входящих операций
-			   // здесь надо посчитать все детали входящих операций
+			// здесь надо посчитать все детали входящих операций
 			for (int i = 0; i < izdelie->listOfDetails->Count; i++) {
 				TSquareDetail *detail =
-					(TSquareDetail*)
-					izdelie->listOfDetails->Items[i];
+					(TSquareDetail*) izdelie->listOfDetails->Items[i];
 				if (detail->operation == (TObject*)previousOperation) {
 					listOfHalfs->Add(detail);
 					perimetr += detail->GetPerimetr();
 				}
 			}
-		break;
+			break;
 			// default: ;
 		}
 	}

@@ -32,8 +32,16 @@ void TfrOperationBaget::SetParams() {
 	modFromMatPrice = matNom->nomenklatura->price / 100;
 	primeNom->nomenklatura->price *= modFromMatPrice;
 
-	// модификатор от периметра
-	modFromPerimetr = matNom->GetCount();
+	// модификатор от периметра за 1 шт в среднем!!!
+    // но это надо будет переделать если делать отдельный материал для каждой детали
+	int countOfShapes = 0;
+
+	for (int i = 0; i < listOfHalfs->Count; i++) {
+	   TSquareElement *detail = (TSquareElement *)listOfHalfs->Items[i];
+	   countOfShapes += detail->listOfShapes->Count;
+	}
+
+	modFromPerimetr = matNom->GetCount() / countOfShapes;
 	primeNom->nomenklatura->price *= modFromPerimetr;
 
 	// модификатор от ширины багета

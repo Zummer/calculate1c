@@ -8,7 +8,7 @@ object ClientModule1: TClientModule1
     Params.Strings = (
       'DriverUnit=DBXDataSnap'
       'HostName=192.168.137.60'
-      'Port=212'
+      'Port=211'
       'CommunicationProtocol=tcp/ip'
       'DatasnapContext=datasnap/'
       

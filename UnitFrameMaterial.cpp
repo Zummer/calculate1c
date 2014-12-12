@@ -95,21 +95,6 @@ void TfrMaterial::SetCount(double count) {
 double TfrMaterial::GetCount() {
 	return count;
 }
-// ---------------------------------------------------------------------------
-// double TfrMaterial2::Sum() {
-// double sum = 0;
-//
-// sum = count * matCur->price;
-// if (count > 0) {
-// // через операцию вызовем эту функцию
-// operation->ShowInMemo(matCur->nomenklatura->myToString(count));
-//
-// fSbornyZakaz->slgoods->Add(matCur->code);
-// fSbornyZakaz->slgoods->Add(matCur->price);
-// fSbornyZakaz->slgoods->Add(count);
-// }
-// return sum;
-// }
 
 // ---------------------------------------------------------------------------
 

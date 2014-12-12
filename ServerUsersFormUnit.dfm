@@ -2,8 +2,8 @@ object fUsers: TfUsers
   Left = 0
   Top = 0
   Caption = #1057#1087#1080#1089#1086#1082' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1077#1081
-  ClientHeight = 437
-  ClientWidth = 631
+  ClientHeight = 338
+  ClientWidth = 529
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,10 +17,11 @@ object fUsers: TfUsers
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 631
+    Width = 529
     Height = 57
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 631
     object DBNavigator1: TDBNavigator
       Left = 16
       Top = 16
@@ -33,8 +34,8 @@ object fUsers: TfUsers
   object DBGridUsers: TDBGrid
     Left = 0
     Top = 57
-    Width = 631
-    Height = 380
+    Width = 529
+    Height = 281
     Align = alClient
     DataSource = MyDataSource1
     DrawingStyle = gdsGradient
@@ -50,18 +51,28 @@ object fUsers: TfUsers
         Expanded = False
         FieldName = 'idlogin_table'
         ReadOnly = True
+        Title.Caption = 'ID'
+        Width = 38
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'login'
-        Width = 150
+        Title.Caption = #1051#1086#1075#1080#1085
+        Width = 158
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'role'
-        Width = 100
+        PickList.Strings = (
+          #1040#1076#1084#1080#1085
+          #1052#1077#1085#1077#1076#1078#1077#1088
+          #1054#1087#1077#1088#1072#1090#1086#1088
+          #1041#1072#1075#1077#1090#1095#1080#1082
+          #1044#1080#1079#1072#1081#1085#1077#1088)
+        Title.Caption = #1056#1086#1083#1100
+        Width = 103
         Visible = True
       end>
   end

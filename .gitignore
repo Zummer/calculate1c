@@ -14,5 +14,7 @@
 
 # игнорировать все файлы в каталогах
 Debug/
+Debug/Win32
 Release/
+Release/Win32
 __history/

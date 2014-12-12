@@ -2,7 +2,7 @@ object fMainClient: TfMainClient
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1072#1103' '#1092#1086#1088#1084#1072
-  ClientHeight = 194
+  ClientHeight = 190
   ClientWidth = 303
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

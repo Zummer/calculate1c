@@ -15,13 +15,22 @@ object fMainServer: TfMainServer
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
-    Left = 160
+    Left = 328
     Top = 72
     Width = 97
     Height = 25
     Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1080
     TabOrder = 0
     OnClick = Button1Click
+  end
+  object btSettings: TButton
+    Left = 328
+    Top = 103
+    Width = 97
+    Height = 25
+    Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
+    TabOrder = 1
+    OnClick = btSettingsClick
   end
   object MyConnection1: TMyConnection
     Database = 'zp_sboi'
