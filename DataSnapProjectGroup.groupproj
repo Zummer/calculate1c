@@ -6,7 +6,7 @@
 			<Projects Include="ServerDSport2.cbproj">
 				<Dependencies/>
 			</Projects>
-			<Projects Include="Client_213.cbproj">
+			<Projects Include="Client_214.cbproj">
 				<Dependencies/>
 			</Projects>
 		</ItemGroup>
@@ -26,23 +26,23 @@
 		<Target Name="ServerDSport2:Make">
 			<MSBuild Projects="ServerDSport2.cbproj" Targets="Make"/>
 		</Target>
-		<Target Name="Client_213">
-			<MSBuild Projects="Client_213.cbproj"/>
+		<Target Name="Client_214">
+			<MSBuild Projects="Client_214.cbproj"/>
 		</Target>
-		<Target Name="Client_213:Clean">
-			<MSBuild Projects="Client_213.cbproj" Targets="Clean"/>
+		<Target Name="Client_214:Clean">
+			<MSBuild Projects="Client_214.cbproj" Targets="Clean"/>
 		</Target>
-		<Target Name="Client_213:Make">
-			<MSBuild Projects="Client_213.cbproj" Targets="Make"/>
+		<Target Name="Client_214:Make">
+			<MSBuild Projects="Client_214.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="ServerDSport2;Client_213"/>
+			<CallTarget Targets="ServerDSport2;Client_214"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="ServerDSport2:Clean;Client_213:Clean"/>
+			<CallTarget Targets="ServerDSport2:Clean;Client_214:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="ServerDSport2:Make;Client_213:Make"/>
+			<CallTarget Targets="ServerDSport2:Make;Client_214:Make"/>
 		</Target>
 		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
 	</Project>
